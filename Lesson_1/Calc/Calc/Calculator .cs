@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace Calc
 {
-    internal class Calculator
+    static class Calculator
     {
-        public double Add(double num1, double num2)
+        public static double Add(double num1, double num2)
         {
             return num1 + num2;
         }
 
-        public double Subtract(double num1, double num2)
+        public static double Subtract(double num1, double num2)
         {
             return num1 - num2;
         }
 
-        public double Multiply(double num1, double num2)
+        public static double Multiply(double num1, double num2)
         {
             return num1 * num2;
         }
 
-        public double Divide(double num1, double num2)
+        public static double Divide(double num1, double num2)
         {
             if (num2 != 0)
                 return num1 / num2;
@@ -34,7 +34,7 @@ namespace Calc
             }
         }
 
-        public double FindSquareRoot(double num)
+        public static double FindSquareRoot(double num)
         {
             if (num >= 0)
                 return Math.Sqrt(num);
@@ -45,18 +45,18 @@ namespace Calc
             }
         }
 
-        public double FindSquare(double num)
+        public static double FindSquare(double num)
         {
             return num * num;
         }
 
-        public double RankToPower(double num1, double num2)
+        public static double RankToPower(double num1, double num2)
         {
             return Math.Pow(num1, num2);
         }
 
 
-        public double FindPercent(double baseValue, double percentValue)
+        public static double FindPercent(double baseValue, double percentValue)
         {
             // validation that we have percents in range 1:100
             if (percentValue < 0 || percentValue > 100)

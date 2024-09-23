@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             bool keepCalculating = true;
-            Calculator calc = new Calculator();
+ 
             int operation = MultipleChoice(false, CalculatorOptions.Exit);
 
             if (operation == (int)CalculatorOptions.Exit)
