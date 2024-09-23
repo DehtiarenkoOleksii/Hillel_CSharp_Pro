@@ -2,20 +2,148 @@
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            bool keepCalculating = true;
- 
-            int operation = MultipleChoice(false, CalculatorOptions.Exit);
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            if (operation == (int)CalculatorOptions.Exit)
+            bool keepCalculating = true;
+            double? savedResult = null; 
+
+            while (keepCalculating)
             {
-                keepCalculating = false;
-                Console.WriteLine("Exiting Calc Pro. Goodbye!");
-                
+                DisplaySavedResult(savedResult);
+
+                int operation = MultipleChoice(false, CalculatorOptions.Exit);
+
+                if (operation == (int)CalculatorOptions.Exit)
+                {
+                    keepCalculating = false;
+                    Console.WriteLine("Exiting Calc Pro. Goodbye!)))");
+                    break;
+                }
+
+                double num1 = GetFirstNumber(savedResult);
+                double result = 0;
+
+                if ((CalculatorOptions)operation == CalculatorOptions.SquareRoot || (CalculatorOptions)operation == CalculatorOptions.Square)
+                {
+                    switch ((CalculatorOptions)operation)
+                    {
+                        case CalculatorOptions.SquareRoot:
+                            result = Calculator.FindSquareRoot(num1);
+                            break;
+                        case CalculatorOptions.Square:
+                            result = Calculator.FindSquare(num1);
+                            break;
+                    }
+                }
+                else
+                {
+                    double num2 = GetValidNumber("Enter the second number:");
+
+                    switch ((CalculatorOptions)operation)
+                    {
+                        case CalculatorOptions.Addition:
+                            result = Calculator.Add(num1, num2);
+                            break;
+                        case CalculatorOptions.Subtraction:
+                            result = Calculator.Subtract(num1, num2);
+                            break;
+                        case CalculatorOptions.Multiplication:
+                            result = Calculator.Multiply(num1, num2);
+                            break;
+                        case CalculatorOptions.Division:
+                            result = Calculator.Divide(num1, num2);
+                            break;
+                        case CalculatorOptions.FindPercent:
+                            result = Calculator.FindPercent(num1, num2);
+                            break;
+                        case CalculatorOptions.Power:
+                            result = Calculator.RankToPower(num1, num2);
+                            break;
+                    }
+                }
+
+                savedResult = AskToSaveResult(result);
+            }
+        }
+        /// <summary>
+        /// Get first nimber from user or use saved result from previous calculation
+        /// </summary>
+        public static double GetFirstNumber(double? savedResult)
+        {
+            if (savedResult.HasValue)
+            {
+                Console.WriteLine($"Saved result: {savedResult.Value}. Do you want to use it as the first number? (y/n)");
+                if (Console.ReadLine().ToLower() == "y")
+                {
+                    return savedResult.Value;
+                }
             }
 
+            return GetValidNumber("\nEnter the first number:");
         }
+        /// <summary>
+        /// Show saved result for cases when it's present
+        /// </summary>
+        public static void DisplaySavedResult(double? savedResult)
+        {
+            Console.Clear(); // Очищаємо консоль
+
+            if (savedResult.HasValue)
+            {
+                Console.WriteLine($"Saved result: {savedResult.Value}");
+            }
+            else
+            {
+                Console.WriteLine("No saved result.");
+            }
+
+            Console.WriteLine("\nSelect an operation:\n");
+        }
+        /// <summary>
+        /// Save result in memory for future calculation if needed 
+        /// </summary>
+        public static double? AskToSaveResult(double result)
+        {
+            Console.WriteLine($"Result: {result}");
+            Console.WriteLine($"Do you want to save the result {result} for the next operation? (y/n)");
+            if (Console.ReadLine().ToLower() == "y")
+            {
+                Console.WriteLine($"Result {result} saved.");
+                return result;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static double GetValidNumber(string prompt)
+        {
+            double result;
+            bool validInput = false;
+
+            do
+            {
+                Console.WriteLine(prompt);
+                string input = Console.ReadLine();
+
+                // Try to parse the input to a double
+                if (double.TryParse(input, out result))
+                {
+                    validInput = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                }
+
+            } while (!validInput);
+
+            return result;
+        }
+
         /// <summary>
         /// Enum-based Menu for user to select an option using arrow keys with borders
         /// </summary>
