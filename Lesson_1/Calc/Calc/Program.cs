@@ -65,7 +65,15 @@
                     }
                 }
 
-                savedResult = AskToSaveResult(result);
+                // Check fo validation cases
+                if (!double.IsNaN(result))
+                {
+                    savedResult = AskToSaveResult(result);
+                }
+                else
+                {
+                    Console.WriteLine("Operation was not successful. Result not saved.");
+                }
             }
         }
         /// <summary>
