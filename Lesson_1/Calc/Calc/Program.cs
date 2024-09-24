@@ -73,6 +73,7 @@
                 else
                 {
                     Console.WriteLine("Operation was not successful. Result not saved.");
+                    Console.ReadKey();
                 }
             }
         }
@@ -101,11 +102,11 @@
 
             if (savedResult.HasValue)
             {
-                Console.WriteLine($"Saved result: {savedResult.Value}");
+                Console.WriteLine($"\nSaved result: {savedResult.Value}");
             }
             else
             {
-                Console.WriteLine("No saved result.");
+                Console.WriteLine("\nNo saved result.");
             }
 
             Console.WriteLine("\nSelect an operation:\n");
