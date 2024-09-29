@@ -27,7 +27,7 @@ namespace Money_Product
                 _integerPart = (int)value;
                 _decimalPart = (int)Math.Round((value - _integerPart) * 100);
 
-                // for cases we "cents" will be automatically added to integer part
+                // for cases where "cents" will be automatically added to integer part
                 if (_decimalPart >= 100)
                 {
                     _integerPart += _decimalPart / 100;

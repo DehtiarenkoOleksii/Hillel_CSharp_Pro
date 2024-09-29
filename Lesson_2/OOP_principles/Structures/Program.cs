@@ -47,24 +47,27 @@
 
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.Write("Enter a decimal number: ");
-            string input = Console.ReadLine();
-
-            if (int.TryParse(input, out int inputNumber))
+            int inputNumber;
+            while (true)
             {
-                DecimalNumber decimalNumber = new DecimalNumber(inputNumber);
+                Console.Write("Enter a decimal number: ");
+                string input = Console.ReadLine();
 
-                Console.WriteLine("Decimal Number: " + decimalNumber.Number);
-                Console.WriteLine("Binary: " + decimalNumber.ToBinary());
-                Console.WriteLine("Octal: " + decimalNumber.ToOctal());
-                Console.WriteLine("Hexadecimal: " + decimalNumber.ToHexadecimal());
+                if (int.TryParse(input, out inputNumber))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer between " + int.MinValue + " and " + int.MaxValue);
+                }
             }
-            else
-            {
-                Console.WriteLine("Invalid input. Please enter a valid integer between " + int.MinValue + " and " + int.MaxValue);
-            }
+
+            DecimalNumber decimalNumber = new DecimalNumber(inputNumber);
+
+            DisplayHelper.DisplayConversions(decimalNumber);
         }
     }
 }
