@@ -25,7 +25,7 @@
             Console.WriteLine(city1);
             city1 = city1 + 1500000;
             Console.WriteLine(city1);
-            city1 = city1 - 1000000;
+            city1 = city1 - 500000;
 
             city1.ComparePopulation(city2);
             city1.ComparePopulation(city3);
