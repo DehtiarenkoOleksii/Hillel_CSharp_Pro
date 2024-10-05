@@ -46,9 +46,9 @@ namespace Employee
         }
         public override bool Equals(object obj)
         {
-            if (obj is Employee employee_other)
+            if (obj is Employee otherEmployee)
             {
-                return this == employee_other;
+                return this == otherEmployee;
             }
             return false;
         }
