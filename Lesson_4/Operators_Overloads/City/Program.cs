@@ -19,8 +19,8 @@
         {
             City city1 = new City("Kharkiv", "Ukraine", 2000000);
             City city2 = new City("Kyiv", "Ukraine", 3000000);
-            City city3 = new City("New York", "Ukraine", 15000000);
-            City city4 = new City("London", "Ukraine", 4000000);
+            City city3 = new City("New York", "USA", 15000000);
+            City city4 = new City("London", "England", 4000000);
 
             Console.WriteLine(city1);
             city1 = city1 + 1500000;
