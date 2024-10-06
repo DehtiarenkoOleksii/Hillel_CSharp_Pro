@@ -30,8 +30,8 @@
             employee1.CompareSalary(employee4);
             employee1.CompareSalary(employee2);
 
-            Console.WriteLine($"Employees {employee1.Name} and {employee2} have the same salary ?: {employee1.Equals(employee2)}");
-            Console.WriteLine($"Employees {employee1.Name} and {employee3} have the same salary ?: {employee1.Equals(employee3)}");
+            Console.WriteLine($"Employees {employee1.Name} and {employee2.Name} have the same salary ?: {employee1.Equals(employee2)}");
+            Console.WriteLine($"Employees {employee1.Name} and {employee3.Name} have the same salary ?: {employee1.Equals(employee3)}");
         }
     }
 }
