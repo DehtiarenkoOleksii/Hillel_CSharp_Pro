@@ -27,7 +27,7 @@
             matrix4.Fill(1);
 
             Matrix matrixAdd = matrix1 + matrix2;
-            Console.WriteLine("\n Adding");
+            Console.WriteLine(" Adding");
             matrixAdd.Print();
 
             Matrix matrixSubtract = matrix1 - matrix2;
