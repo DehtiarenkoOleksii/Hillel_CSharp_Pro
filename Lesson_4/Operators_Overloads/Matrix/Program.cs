@@ -44,7 +44,7 @@
 
             
             Console.WriteLine($"Are matrix1 and matrix1 equal ? - {matrix1.Equals(matrix2)}");
-            Console.WriteLine($"Are matrix1 and matrix1 equal ? - {matrix1.Equals(matrix4)}");
+            Console.WriteLine($"Are matrix1 and matrix4 equal ? - {matrix1.Equals(matrix4)}");
         }
     }
 }
