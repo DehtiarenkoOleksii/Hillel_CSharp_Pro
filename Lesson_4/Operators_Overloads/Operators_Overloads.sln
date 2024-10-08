@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "City", "City\City.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Credit_Card", "Credit_Card\Credit_Card.csproj", "{47FA2194-1AB6-433C-BCC6-7E27A38A1823}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "Matrix\Matrix.csproj", "{654D3DB6-251B-4CB4-8E14-25868707730F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{47FA2194-1AB6-433C-BCC6-7E27A38A1823}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47FA2194-1AB6-433C-BCC6-7E27A38A1823}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47FA2194-1AB6-433C-BCC6-7E27A38A1823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{654D3DB6-251B-4CB4-8E14-25868707730F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{654D3DB6-251B-4CB4-8E14-25868707730F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{654D3DB6-251B-4CB4-8E14-25868707730F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{654D3DB6-251B-4CB4-8E14-25868707730F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
