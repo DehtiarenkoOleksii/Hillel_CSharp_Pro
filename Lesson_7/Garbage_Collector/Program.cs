@@ -61,7 +61,7 @@ namespace Garbage_Collector
 
                 shopManager.DisplayItems(p => p.DisplayInfo());
 
-                shopManager.DeleteItem(p => p.Title == "Pygmalion");
+                shopManager.DeleteItem(p => p.Title == "Epicentre");
 
                 shopManager.DisplayItems(p => p.DisplayInfo());
 
