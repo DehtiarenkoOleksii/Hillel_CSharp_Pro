@@ -1,0 +1,16 @@
+﻿{
+  "Database": {
+    "Doctors": {
+      //"LastId": 1,
+      "Path": "..\\..\\..\\..\\DoctorAppointmentDemo.Data\\MockedDatabase\\XML_DB\\doctors.json"
+    },
+    "Patients": {
+      //"LastId": 0,
+      "Path": "..\\..\\..\\..\\DoctorAppointmentDemo.Data\\MockedDatabase\\XML_DB\\patients.json"
+    },
+    "Appointments": {
+      //"LastId": 0,
+      "Path": "..\\..\\..\\..\\DoctorAppointmentDemo.Data\\MockedDatabase\\XML_DB\\appointments.json"
+    }
+  }
+}

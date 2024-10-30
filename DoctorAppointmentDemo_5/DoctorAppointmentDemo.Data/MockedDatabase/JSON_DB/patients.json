@@ -1,0 +1,14 @@
+﻿[
+  {
+    "IllnessType": 2,
+    "AdditionalInfo": "New Gerpis",
+    "Address": "new super adress",
+    "Name": "New Vasya",
+    "Surname": "",
+    "Phone": null,
+    "Email": null,
+    "Id": 1,
+    "CreatedAt": "2024-10-29T00:20:09.5637083+02:00",
+    "UpdatedAt": "2024-10-29T00:23:33.1271839+02:00"
+  }
+]

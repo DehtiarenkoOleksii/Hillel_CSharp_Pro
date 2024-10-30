@@ -1,0 +1,13 @@
+﻿{
+  "Database": {
+    "Doctors": {
+      "Path": "..\\..\\..\\..\\DoctorAppointmentDemo.Data\\MockedDatabase\\JSON_DB\\doctors.json"
+    },
+    "Patients": {
+      "Path": "..\\..\\..\\..\\DoctorAppointmentDemo.Data\\MockedDatabase\\JSON_DB\\patients.json"
+    },
+    "Appointments": {
+      "Path": "..\\..\\..\\..\\DoctorAppointmentDemo.Data\\MockedDatabase\\JSON_DB\\appointments.json"
+    }
+  }
+}

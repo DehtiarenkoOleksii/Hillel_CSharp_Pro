@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfDoctor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Doctor>
+    <Id>1</Id>
+    <CreatedAt>2024-10-28T17:22:06.1375172+02:00</CreatedAt>
+    <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+    <Name>Bill</Name>
+    <Surname />
+    <DoctorType>Dentist</DoctorType>
+    <Experience>12</Experience>
+    <Salary>2000</Salary>
+  </Doctor>
+</ArrayOfDoctor>
