@@ -15,7 +15,7 @@
         {
             patient ??= new Patient();
 
-            Console.Write("Enter patient's name: ");
+            Console.Write("\nEnter patient's name: ");
             patient.Name = Console.ReadLine();
 
             Console.Write("Enter patient's surname: ");
@@ -27,7 +27,6 @@
             Console.Write("Enter patient's email: ");
             patient.Email = Console.ReadLine();
 
-            // Вибір типу хвороби
             Console.WriteLine("Choice illness type:");
             foreach (var type in Enum.GetValues(typeof(IllnessTypes)))
             {

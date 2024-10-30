@@ -13,6 +13,7 @@ namespace DoctorAppointmentDemo.UI
 
         public static void Main()
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             _doctorAppointment = DoctorAppointment.InitializeStorage();
             OpenMenu();
         }

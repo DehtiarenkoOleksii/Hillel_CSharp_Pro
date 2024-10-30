@@ -15,13 +15,12 @@
         {
             doctor ??= new Doctor();
 
-            Console.Write("Enter doctor's name: ");
+            Console.Write("\nEnter doctor's name: ");
             doctor.Name = Console.ReadLine();
 
             Console.Write("Enter doctor's surname: ");
             doctor.Surname = Console.ReadLine();
 
-            // Вибір типу лікаря
             Console.WriteLine("Choice doctor's type:");
             foreach (var type in Enum.GetValues(typeof(DoctorTypes)))
             {
