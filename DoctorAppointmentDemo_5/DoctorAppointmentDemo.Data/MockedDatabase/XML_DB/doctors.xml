@@ -2,12 +2,22 @@
 <ArrayOfDoctor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Doctor>
     <Id>1</Id>
-    <CreatedAt>2024-10-28T17:22:06.1375172+02:00</CreatedAt>
+    <CreatedAt>2024-10-29T00:24:09.1906467+02:00</CreatedAt>
     <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
-    <Name>Bill</Name>
+    <Name>Leha</Name>
     <Surname />
-    <DoctorType>Dentist</DoctorType>
-    <Experience>12</Experience>
-    <Salary>2000</Salary>
+    <DoctorType>FamilyDoctor</DoctorType>
+    <Experience>33</Experience>
+    <Salary>10000</Salary>
+  </Doctor>
+  <Doctor>
+    <Id>2</Id>
+    <CreatedAt>2024-10-30T10:58:05.663815+02:00</CreatedAt>
+    <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+    <Name>doctor</Name>
+    <Surname>Livsi</Surname>
+    <DoctorType>FamilyDoctor</DoctorType>
+    <Experience>33</Experience>
+    <Salary>10</Salary>
   </Doctor>
 </ArrayOfDoctor>
