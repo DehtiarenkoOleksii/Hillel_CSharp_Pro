@@ -1,0 +1,18 @@
+﻿@model HW11_Notes_Contacts_MVC.Models.Note
+
+<h1>Create New Note</h1>
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" class="form-control" name="Title" />
+    </div>
+    <div class="form-group">
+        <label for="Content">Content</label>
+        <textarea class="form-control" name="Content"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="tagsInput">Tags (comma-separated)</label>
+        <input type="text" class="form-control" name="tagsInput" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

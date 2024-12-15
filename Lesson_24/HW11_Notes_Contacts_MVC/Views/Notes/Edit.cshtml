@@ -1,0 +1,20 @@
+﻿@model HW11_Notes_Contacts_MVC.Models.Note
+
+<h1>Edit Note</h1>
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" class="form-control" name="Title" value="@Model.Title" />
+    </div>
+    <div class="form-group">
+        <label for="Content">Content</label>
+        <textarea class="form-control" name="Content">@Model.Content</textarea>
+    </div>
+    <div class="form-group">
+        <label for="tagsInput">Tags (comma-separated)</label>
+        <input type="text" class="form-control" name="tagsInput" value="@Model.Tags" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="@Url.Action("Index", "Notes")" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,0 +1,26 @@
+﻿@model HW11_Notes_Contacts_MVC.Models.Contact
+
+<h1>Create New Contact</h1>
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" name="Name" />
+    </div>
+    <div class="form-group">
+        <label for="Phone">Phone</label>
+        <input type="text" class="form-control" name="Phone" />
+    </div>
+    <div class="form-group">
+        <label for="AlternativePhone">Alternative Phone</label>
+        <input type="text" class="form-control" name="AlternativePhone" />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" class="form-control" name="Email" />
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <textarea class="form-control" name="Description"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

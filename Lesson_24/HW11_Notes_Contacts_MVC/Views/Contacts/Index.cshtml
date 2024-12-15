@@ -1,0 +1,32 @@
+﻿@model List<HW11_Notes_Contacts_MVC.Models.Contact>
+
+<h1>Contacts</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model)
+        {
+            <tr>
+                <td>@contact.Id</td>
+                <td>@contact.Name</td>
+                <td>@contact.Phone</td>
+                <td>@contact.Email</td>
+                <td>
+                    <a href="@Url.Action("Details", "Contacts", new { id = contact.Id })">Details</a> |
+                    <a href="@Url.Action("Edit", "Contacts", new { id = contact.Id })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Contacts", new { id = contact.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Contacts")">Create New Contact</a>

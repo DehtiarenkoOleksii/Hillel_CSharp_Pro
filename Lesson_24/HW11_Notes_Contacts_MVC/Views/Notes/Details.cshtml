@@ -1,0 +1,10 @@
+﻿@model HW11_Notes_Contacts_MVC.Models.Note
+
+<h1>Note Details</h1>
+<p><strong>Id:</strong> @Model.Id</p>
+<p><strong>Title:</strong> @Model.Title</p>
+<p><strong>Created Date:</strong> @Model.CreatedDate</p>
+<p><strong>Tags:</strong> @Model.Tags</p>
+<p><strong>Content:</strong> @Model.Content</p>
+
+<a href="@Url.Action("Index", "Notes")">Back</a>

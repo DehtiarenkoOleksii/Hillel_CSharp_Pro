@@ -1,0 +1,29 @@
+﻿@model List<HW11_Notes_Contacts_MVC.Models.Note>
+
+<h1>Notes</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Created Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var note in Model)
+        {
+            <tr>
+                <td>@note.Id</td>
+                <td>@note.Title</td>
+                <td>@note.CreatedDate</td>
+                <td>
+                    <a href="@Url.Action("Details", "Notes", new { id = note.Id })">Details</a> |
+                    <a href="@Url.Action("Edit", "Notes", new { id = note.Id })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Notes", new { id = note.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="@Url.Action("Create", "Notes")">Create New Note</a>
