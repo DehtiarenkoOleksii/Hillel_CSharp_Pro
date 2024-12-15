@@ -1,14 +1,17 @@
-﻿@model HW11_Notes_Contacts_MVC.Models.Note
+﻿@model Note
 
 <h1>Create New Note</h1>
 <form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
         <label for="Title">Title</label>
-        <input type="text" class="form-control" name="Title" />
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label for="Content">Content</label>
-        <textarea class="form-control" name="Content"></textarea>
+        <textarea asp-for="Content" class="form-control"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label for="tagsInput">Tags (comma-separated)</label>
@@ -16,3 +19,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

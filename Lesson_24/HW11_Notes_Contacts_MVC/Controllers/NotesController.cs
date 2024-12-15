@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HW11_Notes_Contacts_MVC.Data;
 using HW11_Notes_Contacts_MVC.Models;
-using System.Linq;
 
 namespace HW11_Notes_Contacts_MVC.Controllers
 {
@@ -27,7 +26,6 @@ namespace HW11_Notes_Contacts_MVC.Controllers
             return View(note);
         }
 
-        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -36,25 +34,32 @@ namespace HW11_Notes_Contacts_MVC.Controllers
         [HttpPost]
         public IActionResult Create(Note note, string tagsInput)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(note);
+            }
+
             note.Tags = tagsInput;
             _context.Notes.Add(note);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
         public IActionResult Edit(int id)
         {
             var note = _context.Notes.Find(id);
             if (note == null) return NotFound();
-
-
             return View(note);
         }
 
         [HttpPost]
         public IActionResult Edit(Note note, string tagsInput)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(note);
+            }
+
             var existingNote = _context.Notes.Find(note.Id);
             if (existingNote == null) return NotFound();
 
@@ -66,12 +71,10 @@ namespace HW11_Notes_Contacts_MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
         public IActionResult Delete(int id)
         {
             var note = _context.Notes.Find(id);
             if (note == null) return NotFound();
-
             return View(note);
         }
 

@@ -27,7 +27,6 @@ namespace HW11_Notes_Contacts_MVC.Controllers
             return View(contact);
         }
 
-        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -36,12 +35,16 @@ namespace HW11_Notes_Contacts_MVC.Controllers
         [HttpPost]
         public IActionResult Create(Contact contact)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(contact);
+            }
+
             _context.Contacts.Add(contact);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
         public IActionResult Edit(int id)
         {
             var contact = _context.Contacts.Find(id);
@@ -52,6 +55,11 @@ namespace HW11_Notes_Contacts_MVC.Controllers
         [HttpPost]
         public IActionResult Edit(Contact contact)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(contact);
+            }
+
             var existingContact = _context.Contacts.Find(contact.Id);
             if (existingContact == null) return NotFound();
 
@@ -65,7 +73,6 @@ namespace HW11_Notes_Contacts_MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
         public IActionResult Delete(int id)
         {
             var contact = _context.Contacts.Find(id);
