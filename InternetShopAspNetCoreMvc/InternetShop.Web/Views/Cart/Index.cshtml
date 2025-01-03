@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CartItem>
+
+@{
+	ViewData["Title"] = "Cart";
+}
+
+<h1>Cart</h1>
+
+@if (Model.Count() > 0)
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.Quantity)
+				</th>a
+				
+				<th>
+					@Html.DisplayNameFor(model => model.Product)
+				</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.Quantity)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Product.Name)
+					</td>
+					<td>
+						<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+						<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+
+	<div class="btn-toolbar justify-content-between">
+		<div class="btn-group">
+			<form asp-controller="Orders" asp-action="PlaceOrder" method="get">
+				<button type="submit" class="btn btn-primary width-200-px">Place Order</button>
+			</form>
+		</div>
+		<div class="btn-group">
+			<a class="btn btn-danger width-200-px" asp-action="EmptyCart">Empty Cart</a>
+		</div>
+	</div>
+}
+else
+{
+	<h1>your cart is empty</h1>
+}
+
+
